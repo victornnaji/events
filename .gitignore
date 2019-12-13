@@ -342,3 +342,5 @@ healthchecksdb
 .vscode/
 
 appsettings.json
+
+*.db

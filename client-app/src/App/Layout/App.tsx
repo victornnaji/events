@@ -1,40 +1,28 @@
-import React, {Component} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import './App.css';
 import axios from "axios";
 import { IActivity } from '../models/activities';
 
 
-interface IState{
-  activities : IActivity[];
-}
+const App = () => {
+  const [activities, setActivities] = useState<IActivity[]>([]);
 
-
-class App extends Component<{}, IState>  {
-
-  readonly state: IState = {
-    activities : [],
-  }
-
-  componentDidMount(){
+  useEffect(() => {
     axios.get<IActivity[]>("http://localhost:5000/api/activities")
     .then((response : any) => {
       console.log(response)
-      this.setState({
-        activities : response.data
-      })
+     setActivities(response.data)
     })
-  }
+  }, []);
 
-
-  render(){
-    return (
-      <div className="App">
-        {this.state.activities.map((activity) =>  (
-          <li>{activity.description}</li>
-        ))}
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      {activities.map((activity) =>  (
+        <li>{activity.description}</li>
+      ))}
+    </div>
+  );
+  
   
 }
 

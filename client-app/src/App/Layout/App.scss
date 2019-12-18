@@ -1,0 +1,18 @@
+html{
+    font-size: 62.5%;
+}
+
+.container{
+    max-width: 1300px;
+
+    @media (max-width: 1024px){
+        padding: 0 15px 0 0;
+    }
+}
+
+body{
+    font: normal 400 14px Montserrat,"sans-serif",Helvetica,Arial;
+    line-height: 1.35;
+}
+
+$purple: #9370db

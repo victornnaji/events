@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap');
+@import "../../Layout/App.scss";
+
+
+.nav-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav{
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    box-shadow: 0 10px 10px -10px rgba(0,0,0,.1);
+}
+
+
+.logo-holder{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    height: 6.5rem;
+    width: 7rem;
+
+    @media(max-width: 1024px){
+        height: 4.5rem;
+    width: 5rem;
+    }
+}
+
+.logo-text{
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 3rem;
+    font-weight: 400;
+    color: $purple;
+
+    @media(max-width: 1024px){
+        font-size: 2.5rem;
+    }
+}
+
+.menu{
+    display: none;
+    @media(min-width: 1024px){
+        width: 15%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    @media (max-width: 1024px){
+        transition: all .8s;
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation:  show ease 1s; 
+    }
+}
+
+@keyframes show {
+    0%{ 
+        opacity: 0;
+        left: 0; 
+    }
+
+    100% {
+        left: 50%;
+        opacity: 1; 
+    }
+  }
+
+
+
+.link-item{
+  font-size: 1.5rem;
+
+  transition: all .2s;
+  height: 1.5rem;
+  background-image: linear-gradient($purple, $purple);
+  background-size: 0 5px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+
+    &:hover{
+        height: 3rem;
+        background-size: 100% 5px, auto;
+    }
+}
+
+
+.hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible; }
+    .hamburger:hover {
+      opacity: 0.7; }
+    .hamburger.is-active:hover {
+      opacity: 0.7; }
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after {
+      background-color: $purple; }
+  
+  .hamburger-box {
+    width: 40px;
+    height: 23px;
+    display: inline-block;
+    position: relative; }
+  
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px; 
+
+    &, &::before, &::after {
+        width: 40px;
+        height: 3px;
+        background-color: $purple;
+        border-radius: 4px;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease; 
+    }
+    
+      &::before, &::after {
+        content: "";
+        display: block; }
+      &::before {
+        top: -10px; }
+      &::after {
+        bottom: -10px; }
+}
+    
+
+.hamburger--emphatic {
+   overflow: hidden;
+ }
+.hamburger--emphatic .hamburger-inner {
+    transition: background-color 0.125s 0.175s ease-in; 
+}
+.hamburger--emphatic .hamburger-inner::before {
+    left: 0;
+    transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in; }
+          
+.hamburger--emphatic .hamburger-inner::after {
+    top: 10px;
+    right: 0;
+    transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
+ }
+.hamburger--emphatic.is-active .hamburger-inner {
+transition-delay: 0s;
+transition-timing-function: ease-out;
+background-color: transparent !important; }
+.hamburger--emphatic.is-active .hamburger-inner::before {
+left: -80px;
+top: -80px;
+transform: translate3d(80px, 80px, 0) rotate(45deg);
+transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1); }
+.hamburger--emphatic.is-active .hamburger-inner::after {
+right: -80px;
+top: -80px;
+transform: translate3d(-80px, 80px, 0) rotate(-45deg);
+transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1); }
+  
+.hamburger-container{
+    @media (min-width: 1024px){
+        display: none;
+    }
+}
+
+.overlay{
+    height: 0vh;
+    width: 0%;
+    position: absolute;
+    top: 0px;
+    right: 0rem;
+    background-color: #fff;
+    box-shadow: 0 10px 10px -10px rgba(0,0,0,.1);
+    transition: all .3s;
+    border-radius: 20%;
+}
+
+.toggle{
+    height: 40vh;
+    width: 100%;
+    top: 59px;
+    border-radius: 1%;
+
+    & .menu{
+        display: flex !important;
+        flex-direction: column;
+        height: 10vh;
+        justify-content: space-between;
+    }
+}

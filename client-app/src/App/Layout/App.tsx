@@ -1,7 +1,9 @@
-import React, {Component, useState, useEffect} from 'react';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import './App.scss';
 import axios from "axios";
 import { IActivity } from '../models/activities';
+import Navbar from '../features/nav/Navbar';
+
 
 
 const App = () => {
@@ -17,9 +19,11 @@ const App = () => {
 
   return (
     <div className="App">
-      {activities.map((activity) =>  (
+      <Navbar />
+      {/* {activities.map((activity) =>  (
         <li>{activity.description}</li>
-      ))}
+      ))} */}
+
     </div>
   );
   

@@ -1,0 +1,19 @@
+@import "../../Layout/App.scss";
+
+.button-container, .button-container:link,.button-container:active {
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.small {
+    padding: .7rem 2rem;
+}
+
+.medium {
+    padding:  1rem 2.4rem;
+}
+
+.large{
+    padding:  1.5rem 4rem;
+}

@@ -195,6 +195,7 @@ transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.1
     box-shadow: 0 10px 10px -10px rgba(0,0,0,.1);
     transition: all .3s;
     border-radius: 20%;
+    z-index: 8;
 }
 
 .toggle{

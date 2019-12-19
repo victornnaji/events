@@ -1,0 +1,95 @@
+@import "../../Layout/App.scss";
+
+.hero-container{
+    height: 40rem;
+    background-size: cover;
+
+    @media(max-width: 1024px){
+        height: 30rem;
+    }
+}
+
+.heroImg{
+    height: 40rem;
+
+    @media(max-width: 1024px){
+        height: 20rem;
+        display: none;
+    }
+}
+
+.hero-contents{
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 1024px){
+        flex-direction: column;
+    }
+}
+
+.text-area{
+    @import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier Prime', monospace;
+
+    .heading{
+        font-size: 8rem;
+        font-weight: 700;
+
+        @media(max-width: 1024px){
+            text-align: center;
+            font-size: 6.8rem;
+            font-weight: 600;
+        }
+    }
+    .heading-dynamic{
+        display: inline-block;
+        margin-left: 1rem;
+        color: $purple;
+    }
+}
+
+.shape_one{
+    position: absolute;
+    top: 13%;
+    width: 10rem;
+    height: 6rem;
+    animation: rotated 118s infinite linear;
+    z-index: -9999;
+}
+
+.round-shape-four {
+    position: absolute;
+    left: 20%;
+    top: 10rem;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    animation: rotated 100s infinite linear;
+    z-index: -9999;
+
+   &::before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    background: #ddabf6;
+    border-radius: 50%;
+  }
+}
+
+@keyframes rotated{
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

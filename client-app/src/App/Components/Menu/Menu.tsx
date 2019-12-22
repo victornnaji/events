@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import "./Menu.scss";
-import Button from '../Button/Button';
+// import Button from '../Button/Button';
+import SimpleModal from '../modals/Modal';
+import FormText from '../Form/Form';
 var logo = "assets/logo.png"
 
-const Menu = ({ menus }: any) => {
+const Menu = () => {
     const [toggle, settoggle] = useState(false)
 
     const clickHandler = () => {
-        // hamburger--emphatic
         settoggle(!toggle);
     };
 
@@ -27,7 +28,9 @@ const Menu = ({ menus }: any) => {
                     </div>
 
                     <div className="button-item">
-                        <Button text="Create" size="medium" bgColor="#9370db" />
+                        <SimpleModal>
+                            <FormText />
+                        </SimpleModal>
                     </div>
                 </div>
 
@@ -57,7 +60,9 @@ const Menu = ({ menus }: any) => {
             </div>
 
             <div className="button-item">
-                <Button text="Create" size="medium" bgColor="#9370db" />
+              <SimpleModal>
+                <FormText />
+              </SimpleModal>
             </div>
         </div>
     </div>

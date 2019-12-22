@@ -4,7 +4,7 @@ import Menu from '../../Components/Menu/Menu';
 const Navbar = () => {
     return (
         <div>
-            <Menu menus={["home", "conacts"]}/>
+            <Menu />
         </div>
     )
 }

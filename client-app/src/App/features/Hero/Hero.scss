@@ -40,7 +40,7 @@
 
         @media(max-width: 1024px){
             text-align: center;
-            font-size: 6.77rem;
+            font-size: 7.8rem;
             font-weight: 600;
         }
     }
@@ -62,13 +62,18 @@
 
 .round-shape-four {
     position: absolute;
-    left: 20%;
-    top: 10rem;
-    width: 350px;
-    height: 350px;
     border-radius: 50%;
     animation: rotated 100s infinite linear;
     z-index: -9999;
+
+    @media(min-width: 1024px){
+        left: 20%;
+        top: 10rem;
+        width: 350px;
+        height: 350px;
+    }
+
+    
 
    &::before{
     content: "";

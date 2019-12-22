@@ -12,7 +12,6 @@ const Home = () => {
     useEffect(() => {
         axios.get<IActivity[]>("http://localhost:5000/api/activities")
         .then((response : any) => {
-        console.log(response)
         setActivities(response.data)
         })
     }, []);

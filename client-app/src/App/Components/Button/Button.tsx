@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import "./Button.scss";
 
-const Button = ({size, bgColor, text} : any) => {
+interface IProp{
+    size: string;
+    bgColor: string;
+    text: string;
+    onclick?: any;
+}
+const Button: React.FC<IProp> = ({size, bgColor, text, onclick}) => {
     const [hover, sethover] = useState(false);
 
     const toggleHover = () => {
@@ -15,15 +21,13 @@ const Button = ({size, bgColor, text} : any) => {
         linkStyle = {backgroundColor: `${bgColor}`}
     }
 
-    console.log(hover);
-
     return (
         <div className={`button-container ${size}`} 
             onMouseEnter={toggleHover} 
             onMouseLeave={toggleHover}
             style={linkStyle}
+            onClick={onclick}
             >
-
          {text}
         </div>
     )

@@ -3,3 +3,28 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.container{
+    padding: 15px;
+}
+
+.activity-title{
+    margin-top: 2rem;
+    font-size: 4rem;
+    text-transform: uppercase;
+
+    @media (max-width: 1024px){
+        font-size: 2rem;
+    }
+    
+}
+.grid{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    grid-gap: 3rem;
+
+    @media(max-width: 1024px){
+        justify-items: center;
+    }
+}

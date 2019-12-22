@@ -27,7 +27,7 @@ const Menu = ({ menus }: any) => {
                     </div>
 
                     <div className="button-item">
-                        <Button text="login" size="medium" bgColor="#9370db" />
+                        <Button text="Create" size="medium" bgColor="#9370db" />
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@ const Menu = ({ menus }: any) => {
             </div>
 
             <div className="button-item">
-                <Button text="login" size="medium" bgColor="#9370db" />
+                <Button text="Create" size="medium" bgColor="#9370db" />
             </div>
         </div>
     </div>

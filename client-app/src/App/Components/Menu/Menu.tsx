@@ -3,7 +3,10 @@ import "./Menu.scss";
 // import Button from '../Button/Button';
 import SimpleModal from '../modals/Modal';
 import FormText from '../Form/Form';
-var logo = "assets/logo.png"
+//@ts-ignore
+import {NavLink} from "react-router-dom";
+
+var logo = "assets/logo.png";
 
 const Menu = () => {
     const [toggle, settoggle] = useState(false)
@@ -17,10 +20,12 @@ const Menu = () => {
     <nav className="nav">
         <div className="container">
         <div className="nav-items">
-                <div className="logo-holder">
-                    <img src={logo} alt="" className="logo" />
-                    <span className="logo-text">EventR</span>
-                </div>
+            <NavLink to ="/">
+                    <div className="logo-holder">
+                        <img src={logo} alt="" className="logo" />
+                        <span className="logo-text">EventR</span>
+                    </div>
+            </NavLink>
 
                 <div className="menu">
                     <div className="link-item">

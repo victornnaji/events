@@ -81,6 +81,24 @@ const Form = () => {
                 </div>
             </div>
 
+            
+            <div className="row" style={{marginTop: `2rem`}}>
+                <div className="col-lg-4">
+                <TextField
+                        id="outlined-full-width"
+                        label="Event Category"
+                        style={{ margin: 8, fontSize: `1.2rem` }}
+                        placeholder="Event Category"
+                        fullWidth
+                        margin="normal"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                        variant="outlined"
+                    />
+                </div>
+            </div>
+            
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <div className="row" style={{marginTop: `2rem`}}>
                 <div className="col-lg-6">

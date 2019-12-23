@@ -3,22 +3,23 @@ import "./ActivityCard.scss";
 import { IActivity } from '../../models/activities';
 import Button from '../Button/Button';
 
+//@ts-ignore
+import {NavLink} from "react-router-dom";
+
 
 interface IProp {
     activity : IActivity;
+    selectActivity: (id: string) => void;
+    selectedActivity: IActivity | null;
 };
 
 var placeholder = "assets/placeholder.jpg";
 
-const ActivityCard : React.FC<IProp> = ({activity}) => {
+const ActivityCard : React.FC<IProp> = ({activity, selectActivity}) => {
     var datetime = dateCheck(activity.date);
     var days = datetime.slice(0, 15);
     var time = timeConvert(datetime.slice(16, 21));
 
-    const clickHandler =(e: any) =>{
-        e.preventDefault();
-        console.log(activity.title)
-    }
     return (
         <div className="card-container">
             <div className="card-image">
@@ -44,7 +45,10 @@ const ActivityCard : React.FC<IProp> = ({activity}) => {
                     <div className="location">
                         <span className="card-icon"><i className="fas fa-map-marker-alt"></i></span>
                         {activity.city}</div>
-                    <Button text="View event" size="medium" bgColor="#9370db" onclick={clickHandler}/>
+                    <NavLink to={`/activity/${activity.id}`}>
+                    <Button text="View event" size="medium" bgColor="#9370db" onclick={ () => selectActivity(activity.id)}/>
+                    </NavLink>
+                    
                 </div>
             </div>
         </div>

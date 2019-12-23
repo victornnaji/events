@@ -8,6 +8,11 @@ import "./Home.scss";
 
 const Home = () => {
     const [activities, setActivities] = useState<IActivity[]>([]);
+    const [selectedActivity, setSelectedActivity] = useState<IActivity | null>(null);
+
+    const HandleSelectAcivity = (id: string) => {
+        setSelectedActivity(activities.filter(activity => activity.id === id)[0]);
+    };
 
     useEffect(() => {
         axios.get<IActivity[]>("http://localhost:5000/api/activities")
@@ -19,7 +24,10 @@ const Home = () => {
     return (
         <div className="home">
             <Hero/>
-            <Dashboard activities={activities} />
+            <Dashboard activities={activities} 
+            selectActivity ={HandleSelectAcivity}
+            selectedActivity={selectedActivity}
+            />
         </div>
     )
 }

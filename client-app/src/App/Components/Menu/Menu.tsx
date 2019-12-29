@@ -21,10 +21,10 @@ const Menu = () => {
         <div className="container">
         <div className="nav-items">
             <NavLink to ="/">
-                    <div className="logo-holder">
-                        <img src={logo} alt="" className="logo" />
-                        <span className="logo-text">EventR</span>
-                    </div>
+                <div className="logo-holder">
+                    <img src={logo} alt="" className="logo" />
+                    <span className="logo-text">EventR</span>
+                </div>
             </NavLink>
 
                 <div className="menu">

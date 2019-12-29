@@ -46,7 +46,7 @@ const ActivityCard : React.FC<IProp> = ({activity, selectActivity}) => {
                         <span className="card-icon"><i className="fas fa-map-marker-alt"></i></span>
                         {activity.city}</div>
                     <NavLink to={`/activity/${activity.id}`}>
-                    <Button text="View event" size="medium" bgColor="#9370db" onclick={ () => selectActivity(activity.id)}/>
+                        <Button text="View event" size="medium" bgColor="#9370db" onclick={ () => selectActivity(activity.id)}/>
                     </NavLink>
                     
                 </div>

@@ -1,31 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Hero from '../../features/Hero/Hero';
 import Dashboard from '../dashboard/Dashboard';
-import { IActivity } from '../../models/activities';
-import axios from "axios";
 import "./Home.scss";
+import { IActivity } from '../../models/activities';
 
+interface IProp{
+    activities: IActivity[];
+    selectActivity: (id: string) => void;
+    selectedActivity: IActivity | null;
+}
 
-const Home = () => {
-    const [activities, setActivities] = useState<IActivity[]>([]);
-    const [selectedActivity, setSelectedActivity] = useState<IActivity | null>(null);
-
-    const HandleSelectAcivity = (id: string) => {
-        setSelectedActivity(activities.filter(activity => activity.id === id)[0]);
-    };
-
-    useEffect(() => {
-        axios.get<IActivity[]>("http://localhost:5000/api/activities")
-        .then((response : any) => {
-        setActivities(response.data)
-        })
-    }, []);
-
+const Home:React.FC<IProp> = ({activities, selectActivity, selectedActivity}) => {
     return (
         <div className="home">
             <Hero/>
             <Dashboard activities={activities} 
-            selectActivity ={HandleSelectAcivity}
+            selectActivity ={selectActivity}
             selectedActivity={selectedActivity}
             />
         </div>

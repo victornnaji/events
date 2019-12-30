@@ -11,7 +11,7 @@ interface IProp{
    match: any;
 }
 
-var bg = "assets/placeholder.jpg";
+var placeholder = "assets/placeholder.jpg";
 
 const ActivityDetails: React.FC<IProp> = ({match}) => {
    const [activity, setActivity] = useState<IActivity>();
@@ -27,10 +27,12 @@ const ActivityDetails: React.FC<IProp> = ({match}) => {
    }, [match.params.activityId]);
 
 
-   // console.log(activity);
     return (
         <div className="activity-container">
            <div className="container">
+               <div className="activity-image" style={{border: "1px solid red", height:'200px'}}>
+                <img src={placeholder} alt="" className="activity-img"/>
+               </div>
               {loading ? (<div>loading.....</div>) : 
              <div>
                  {activity?.title}
